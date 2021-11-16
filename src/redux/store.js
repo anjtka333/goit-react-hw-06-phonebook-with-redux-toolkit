@@ -1,7 +1,5 @@
-import { createStore, combineReducers } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { reducerContacts } from "./contacts/contactsReducers";
-import { configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
   contacts: reducerContacts,

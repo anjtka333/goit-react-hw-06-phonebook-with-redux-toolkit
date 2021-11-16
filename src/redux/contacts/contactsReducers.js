@@ -15,26 +15,22 @@ import {
 //   },
 // });
 
-const reducerItems =
-  ([],
-  {
-    [addContact]: (state, { payload }) => {
-      return [...state, payload];
-    },
+const reducerItems = createReducer([], {
+  [addContact]: (state, { payload }) => {
+    return [...state, payload];
+  },
 
-    [delContact]: (state, { payload }) => {
-      return state.filter((item) => item.id !== payload);
-    },
-    [addContacts]: (_, { payload }) => {
-      return payload;
-    },
-  });
+  [delContact]: (state, { payload }) => {
+    return state.filter((item) => item.id !== payload);
+  },
+  [addContacts]: (_, { payload }) => {
+    return payload;
+  },
+});
 
-const reducerFilter =
-  ("",
-  {
-    [putFilter]: (_, { payload }) => payload,
-  });
+const reducerFilter = createReducer("", {
+  [putFilter]: (_, { payload }) => payload,
+});
 
 // const reducerItems = (state = [], { type, payload }) => {
 //   switch (type) {
